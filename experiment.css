@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header-container {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+h1 {
+    flex-direction: row;
+}
+
+#header-container p {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+
+
+#information-about-the-purchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 90%;
+}
+
+input, select {
+    width: 100%;
+}
+
+table {
+    width: 80%;
+    padding: 50px;
+}
+
+
+
+
+
+
+.ledger-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ledger-list div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ledger-list div p {
+    padding: 5px;
+    margin-top: -15px;
+    
+}
