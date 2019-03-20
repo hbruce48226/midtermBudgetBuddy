@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSgNgHy8eSlQDeLMrgxM5zW2HU7TxvP11eXZuj87eO6ry8-3Zy9g:https://i2.wp.com/fancycrave.com/wp-content/uploads/2017/06/How-to-Use-Video-Background-on-Websites.jpg%3Fresize%3D900%252C599"/> -->
+  </head>
+  <body>
+    <section class="icon-list">
+
+        <div id="icon"><i class="fa fa-bank" style="font-size:60px;color:green"></i><p id="tInc"></p></div>
+        <div id="icon"><i class="fa fa-credit-card-alt" style="font-size:60px;color:red"></i><p id="tExp"></p></div>
+        <div id="icon"><i style="font-size:60px" class="fa">&#xf155;</i><p id="balAmt"></p></div>
+
+    </section>
+    <section class="budget-list">    
+      <h1>Budget</h1>
+      <label>Income</label>
+      <p><input type="text" id="my-Income" placeholder="0" /></p>
+      <label>Other Income</label>
+      <p><input type="text" id="other-Income" placeholder="0" /></p>
+      <p><button onclick="updateTotalIncome();">Calculate</button></p>
+      <label>Total</label>
+      <p><input type="text" id="total-Income" /></p>
+    
+    </section>
+          
+    <section class="expense-list">
+       <h1>Expenses</h1>
+       <label>Entertainment</label>
+       <p><input type="text" id="fun-Expense" placeholder="0" /></p>
+       <label>Food</label>
+       <p><input type="text" id="food-Expense" placeholder="0" /></p>
+       <label>Clothes</label>
+       <p><input type="text" id="clothe-Expense" placeholder="0" /></p>
+       <label>Bills</label>
+       <p><input type="text" id="bill-Expense" placeholder="0" /></p>
+       <p><button onclick="updateTotalExpenses();">Calculate</button></p>
+       <label>Total</label>
+       <p><input type="text" id="total-Expenses" placeholder="0" /></p>
+    </section>
+
+    <!-- <section class="balance-amount">
+        <h1>Balance</h1>
+        <p><input type="text" id="balance" placeholder="0"/></p>
+        <p><button onclick="updateBalance();">Calculate</button></p>
+
+    </section> -->
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
