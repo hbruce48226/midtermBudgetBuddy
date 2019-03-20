@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel = "stylesheet" type="text/css" href="styles.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Budget Buddy</title>
+</head>
+<body>
+ <h3 class="logo">Budget<span class="logo-green">Buddy</span></h3>   
+<div id="container">
+    
+    <h1>Budget Calculator Tool</h1>
+    <div class="add-border"></div>
+
+<!-- Create a budget form -->
+
+<form class="budget-form" id="budget-form">
+<h5>Please enter your budget</h5>
+<div class='form-group'>
+    <input type="number" class="budget-input" id="budget-input" placeholder="Enter your budget amount...">
+</div>
+<button type="submit" class="submit-add-button" id="budget-submit">Calculate</button>
+
+</form>
+
+<!-- Display Budget, Expense, and Balance -->
+<div id="display-all">
+        <div class="display-budget">
+   
+   <h6 class="info-title-budget">budget</h6>
+   <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
+   <h4 class="text-uppercase-budget" id="budget"><span>$</span><span id="budget-amount">0</span></h4>
+   
+   </div>
+   <div class="display-expense">
+   <h6 class="info-title-expense">expenses</h6>
+   <span class="expense-icon"><i class="far fa-credit-card"></i></span>
+   <h4 class="text-uppercase-expense" id="expense"><span>$</span><span id="expense-amount">0</span></h4>
+   </div>
+   
+   <div class="display-balance">
+   <h6 class="info-title-balance">balance</h6>
+   <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
+   <h4 class="text-uppercase-balance" id="balance"> <span>$</span><span id="balance-amount">0</span></h4>
+   
+    </div>
+   </div>     
+<!-- Create an expense form -->
+
+<form class="expense-form" id="expense-form">
+        <h5>Please select your expense</h5>
+        <div class='form-group'>
+        <select input type = "text" class="amount-input" id='amount-input'>
+            <option>Select an option</option>
+            <option>Entertainment</option>
+            <option>Food</option>
+            <option>Clothing</option>
+            <option>Bills</option>
+        </select>
+    </div>
+    <h5>Please add your expense amount</h5>
+    <div class='form-group'>
+            <input type="number" class="expense-input" id="expense-input" placeholder="Please enter your amount spent...">
+        </div>
+        <button type="submit" class="submit-add-button" id="expense-submit">Add expense</button>
+    </form>
+</div>
+
+<!-- Create a table with calculations per category -->
+
+<div class="expense-spreadsheet">
+ <table class="expense-table">
+  <thead>
+    <tr>
+     <th>Expense Value</th>
+     <th>Expense Amount</th>
+     <th>Total Expenses</th>
+     <th>Budget</th>
+     <th>Balance</th>
+   </tr>
+</thead>
+<tbody>
+<tr>
+    <td id ='entertainment'>Entertainment</td>
+    <td class="expense-row1"><span>$</span>0</td>
+    <td class="total-row1"><span>$</span>0</td>
+    <td class="budget-row1"><span>$</span>0</td>
+    <td class="balance-row1"><span>$</span>0</td>
+  </tr>
+<tr>
+    <td id='food'>Food</td>
+    <td class="expense-row2"><span>$</span>0</td>
+    <td class="total-row2"><span>$</span>0</td>
+    <td class="budget-row2"><span>$</span>0</td>
+    <td class="balance-row2"><span>$</span>0</td>
+</tr>
+<tr>
+    <td id='clothing'>Clothing</td>
+    <td class="expense-row3"><span>$</span>0</td>
+    <td class="total-row3"><span>$</span>0</td>
+    <td class="budget-row3"><span>$</span>0</td>
+    <td class="balance-row3"><span>$</span>0</td>
+</tr>
+<tr>
+    <td id='bills'>Bills</td>
+    <td class="expense-row4"><span>$</span>0</td>
+    <td class="total-row4"><span>$</span>0</td>
+    <td class="budget-row4"><span>$</span>0</td>
+    <td class="balance-row4"><span>$</span>0</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+
+<button type="reset" class="button-reset" id="budget-reset">Reset</button>
+</div>
+       
+<script src="index.js"></script>
+</body>
+</html>
