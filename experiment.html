@@ -37,9 +37,9 @@
 
 
     <section id='information-about-the-purchase'>
-        <div id='purchase-type-dropdown'>
+        <div>
             <p>What type of purchase is it?</p>
-            <select name="type">
+            <select name="type" id='purchase-type-dropdown'>
                 <option value="Entertainment">Entertainment</option>
                 <option value="Food">Food</option>
                 <option value="Clothing">Clothing</option>
@@ -63,28 +63,61 @@
     <!-- if input is x, put that into ledger x -->
     <!-- if input is y, put that into ledger y -->
 
-    <table id='ledger-table'>
+    <table id='ledger-table-entertainment'>
         <tr>
+            <th>entertainment</th>
             <th>Description</th>
             <th>Date</th>
             <th>Price</th>
         </tr>
+    </table>
+    <table id='ledger-table-food'>
         <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>UK</td>
-        </tr>
-        <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>Canada</td>
-        </tr>
-        <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>Italy</td>
+            <th>food</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Price</th>
         </tr>
     </table>
+    <table id='ledger-table-clothing'>
+        <tr>
+            <th>clothing</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </table>
+    <table id='ledger-table-bills'>
+        <tr>
+            <th>bills</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </table>
+    <!-- <table id='food-ledger'>
+        <tr>
+            <td>Food</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+
+    <!-- <tr>
+        <td>Clothing</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Bills</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    </table> -->
 
 
 

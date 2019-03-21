@@ -35,11 +35,32 @@ input, select {
 }
 
 table {
-    width: 80%;
-    padding: 50px;
+    width: 90%;
+    /* padding: 50px; */
+    border: 1px solid black;
+    /* text-align: center; */
+    border-spacing: 0px;
+    border-collapse: collapse;
 }
 
+td, th {
+    vertical-align: 0px;
+}
 
+th {
+    color: red;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 25%;
+}
+
+table th {
+    text-align: left;
+}
+
+table td {
+    text-align: left;
+}
 
 
 
