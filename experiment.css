@@ -1,83 +1,284 @@
+html {
+    height:120%;
+    /* background-color: red; */
+
+}
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+    background-color: red;
+    background-image: linear-gradient(hsl(26, 80%, 53%), red);
+    padding-bottom: 0%;
+    margin-bottom: 0%;
 }
 
+.inputFormat, .tableFormat {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 35px;
+}
+
+.inputFormat {
+    background-image: linear-gradient(hsl(26, 70%, 60%), hsl(26, 70%, 46%));
+    margin-top: 7px;
+}
+
+.tableFormat {
+    padding: 0 8px 20px 8px;
+    background-image: linear-gradient(hsl(26, 70%, 60%), hsl(26, 70%, 46%));
+}
+
+
+/* the container for the Budget Spent Balance header */
+#blackboxHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: monospace;
+    width: 90%;
+    font-size: 1.1em;
+}
+
+/* the Budget Spent Balance header section */
 #header-container {
     display: flex;
-    width: 60%;
+    width: 100%;
+    /* makes header width size */
     justify-content: space-between;
+    /* formats equal spacing of header */
 }
 
-h1 {
-    flex-direction: row;
-}
-
+/* the boxes containing the number value of Budget Spent Balance */
 #header-container p {
     display: flex;
     justify-content: center;
+    /* centers number in box */
     border: 1px solid black;
+    height: 35px;
+    width: 100%;
+    font-size: 2em;
+    font-size-adjust: inherit;
+    /* makes boxes adjustable depending on size of number given */
 }
 
+/* the class containin the Header and Box for the Budget Spent Balance section */
+.header-container-col {
+    width: 45%;
+    /* makes each col of header equal size */
+    text-align: center;
+    /* centers the header above the box */
+}
 
+/* the h1 component of the class containing the header Budget Spent Balance section */
+.header-container-col h1 {
+    margin-bottom: -25px;
+    /* makes numbers closer to headers words */
+}
 
+/* the input budget section under the Budget Spent Balance header section*/
+#budget-input-section {
+    padding-bottom: 10px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    text-align-last: center;
+}
+
+/* the 'Input your budget' box */
+#what-is-your-budget {
+    height: 20px;
+    padding: 2px 2px 0px 2px;
+    margin-bottom: 2px;
+    opacity: .8;
+    border: 0;
+    border: 3px solid hsl(51, 70%, 40%);
+    background-color: hsl(26, 70%, 56%);
+}
+
+/* the placeholder for the 'Input your budget' box */
+#what-is-your-budget::placeholder {
+    color: black;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+/* the submit button for the 'Input your budget' box */
+#submit-your-budget {
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: .8em;
+    margin-bottom: 10px;
+    height: 25px;
+    font-family: monospace;
+    font-size: 1.1em;
+    padding-top: 2px;
+    background-color: hsl(210, 34%, 45%);
+}
+
+/* the main section where the user inputs information about their purchase */
 #information-about-the-purchase {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
     width: 90%;
 }
 
-input, select {
+/* the class containing the input boxes for the main information input section */
+.paragraphAndInput {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
+    margin: -2px;
+    overflow: visible;
 }
 
+/* the input box components of this class */
+.paragraphAndInput input {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: hsl(26, 70%, 46%);
+    border: 0;
+    border: 3px solid hsl(51, 70%, 40%);
+    border-radius: 10px;
+    height: 40px;
+}
+
+/* the placeholder for the input box class */
+.paragraphAndInput input::placeholder {
+    color: black;
+    font-size: 120%;
+    font-family: monospace;
+    text-underline-position: below;
+    text-align-last: left;
+    padding-left: 10px;
+}
+
+/* the select dropdown component of this class */
+.paragraphAndInput select {
+    width: 100%;
+    border: 0;
+    border: 3px solid hsl(51, 70%, 40%);
+    border-radius: 10px;
+    text-align-last: center;
+    /* centers the value in the dropdown select (only for chrome i think?) */
+    height: 50px;
+    background-color: hsl(26, 70%, 46%);
+    font-size: 105%;
+    font-family: monospace;
+}
+
+/* the submit button under the input boxes / select dropdown in this section */
+#addButton {
+    width: 100%;
+    /* makes button span entire width of container */
+    justify-content: center;
+    /* centers 'Submit' in the middle of the button */
+    height: 50px;
+    font-size: 1em;
+
+
+    border: 0;
+    background-color:hsl(26, 70%, 46%);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 3px solid hsl(51, 70%, 40%);
+    border-radius: 10px;
+    color: white;
+    font-family: monospace;
+    font-size: 1.5em;
+
+}
+
+/* the Entertainment Food Clothing Bills headers for the ledger section */
+h3 {
+    margin-bottom: 0px;
+    font-family: monospace;
+    font-size: 1.5em;
+    margin-bottom: 2px;
+}
+
+/* the ledger section */
 table {
-    width: 90%;
-    /* padding: 50px; */
+    width: 100%;
     border: 1px solid black;
-    /* text-align: center; */
     border-spacing: 0px;
     border-collapse: collapse;
 }
 
+/* the table itself */
 td, th {
-    vertical-align: 0px;
+    flex-wrap: wrap;
 }
 
+/* the Description column of the ledger table */
+.ledger-col-description {
+    flex: 1;
+    width: 50%;
+    text-align: center;
+}
+
+/* the Date column of the ledger table */
+.ledger-col-date {
+    flex: 1;
+    width: 25%;
+    text-align: center;
+}
+
+/* the Price column of the ledger table */
+.ledger-col-price {
+    flex: 1;
+    width: 25%;
+    text-align: center;
+}
+
+/* the table's header section */
 th {
-    color: red;
+    font-family: monospace;
     margin-top: 0px;
     padding-top: 0px;
-    width: 25%;
-}
-
-table th {
+    width: 30%;
+    border: 1px solid black;
     text-align: left;
 }
 
+/* the table's row section */
 table td {
     text-align: left;
+    border: 1px solid black;
+    text-align: center;
 }
 
+/* the 'Display your monthly spend breakdown' button */
+#spendBreakdownButton {
+    border: none;
+    background-color: hsl(26, 70%, 70%);
+    background-image: linear-gradient(hsl(26, 70%, 60%), hsl(26, 70%, 46%));
+    margin-bottom: 20px;
+}
 
-
-
-.ledger-list {
+#piechartSection {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
 }
 
-.ledger-list div {
+#piechart {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.ledger-list div p {
-    padding: 5px;
-    margin-top: -15px;
-    
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    margin-top: 10px;
 }
