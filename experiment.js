@@ -84,8 +84,6 @@ addYourBudget.addEventListener('click', () => {
 
 
 
-
-
 // addButton is how a new item/purchase is added to the ledger
 // the addButton, when clicked, calls the purchaseUpdater() and gets current userBudget and value of new item's price given in the input box by the user
 const addButton = document.getElementById('addButton'); //finds button with id 'addButton' and assigns to varaible 'addButton'
@@ -187,4 +185,9 @@ spendBreakdownButton.addEventListener('click', () => {
 
         chart.draw(data, options);
     };
+
 });
+
+function myFunction() {
+    location.reload();
+  }
