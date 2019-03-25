@@ -1,7 +1,14 @@
 let purchaseType = document.getElementById('purchase-type-dropdown'); //dropdown to choose entertainment, food, clothing, or bills
 let purchaseDescription = document.getElementById('purchase-information-description'); //input box to give description of purchase
 let purchasePrice = document.getElementById('purchase-information-price'); //input box to give price of purchase
+let budgetAlert = document.querySelector(".budget-feedback");
+let budgetValue = document.getElementById("what-is-your-budget");
 
+
+let entertainmentSpentCounter = 0;
+let foodSpentCounter = 0;
+let clothingSpentCounter = 0;
+let billsSpentCounter = 0;
 
 
 // adds things to the ledger
@@ -35,15 +42,20 @@ class Ledger {
             const ledger_table_clothing = document.getElementById('ledger-table-clothing');
             const ledger_table_bills = document.getElementById('ledger-table-bills');
 
-
+        
             if (purchaseType.value === 'Entertainment') {
                 ledger_table_entertainment.appendChild(row);
+                entertainmentSpentCounter += parseInt(purchasePrice.value);
             } else if (purchaseType.value === 'Food') {
                 ledger_table_food.appendChild(row);
+                foodSpentCounter+=parseInt(purchasePrice.value);
+    
             } else if (purchaseType.value === 'Clothing') {
                 ledger_table_clothing.appendChild(row);
+                clothingSpentCounter+=parseInt(purchasePrice.value);
             } else if (purchaseType.value === 'Bills') {
                 ledger_table_bills.appendChild(row);
+                billsSpentCounter+=parseInt(purchasePrice.value);
             }
 
 
@@ -83,13 +95,6 @@ class LedgerItem {
 
 
 
-
-
-
-
-
-
-
 // this is the main header section: budget, amount spent, balance
 let userBudget = document.getElementById('userBudget'); //finds the main paragraph element with id 'userBudget' and assigns it to the variable 'userBudget'
 // userBudget = parseInt(userBudget);
@@ -106,13 +111,13 @@ addYourBudget.addEventListener('click', () => {
     amountSpent.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}` * 0; //this will be initialized with 0, no purchases made yet
     balance.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}`; //this will be initialized to whatever the budget is
 
-    console.log(`look at me bitch, the amountSpent is: ${amountSpent.innerHTML}`);
+    console.log(`the amountSpent is: ${amountSpent.innerHTML}`);
     console.log(`Budget is ${typeof (userBudget)}`);
     console.log(`Amount Spent is ${typeof (amountSpent)}`);
     console.log(`Balance is ${typeof (balance)}`);
 
 });
-console.log(`look at me bitch, the amountSpent is: ${amountSpent.innerHTML}`);
+console.log(`the amountSpent is: ${amountSpent.innerHTML}`);
 
 
 
@@ -137,15 +142,24 @@ addButton.addEventListener('click', () => {
     let price = parseInt(purchasePrice.value);
     // purchaseUpdater(balance,inputPriceOfPurchase.value);
     purchaseUpdater(price);
+    
     console.log(amountSpent.innerHTML);
-    console.log(`look at me bitch, the amountSpent is: ${amountSpent.innerHTML}`);
+    console.log(`the amountSpent is: ${amountSpent.innerHTML}`);
 
     // document.getElementById('balance').innerHTML = `your balance: ${balance}`; //displays the change in budget
 
 
     let newLedgerRow = new Ledger([new LedgerItem(`${purchaseType.value}`, `${purchaseDescription.value}`, `03.20.2019`, `$${purchasePrice.value}`)]);
     newLedgerRow.display();
+   
+
+if (budgetValue.value<purchasePrice.value) {
+let budgetAlert = alert('You are over-budget. Stop spending money!');
+}
+
+    
 });
+
 
 // // finds the table element with id 'ledger-table' and assigns it to variable 'ledger_table'
 // const ledger_table = document.getElementById('ledger-table');
@@ -159,19 +173,15 @@ addButton.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
 // purchaseUpdater() function is called when addButton is clicked
 const purchaseUpdater = (itemPrice) => { //function takes in price of item and changes the budget to reflect purchase
     amountSpent.innerHTML = parseInt(amountSpent.innerHTML) + parseInt(itemPrice); //updates amountSpent
     balance.innerHTML -= itemPrice; //updates budget 
 };
 
-
+function myFunction() {
+    location.reload();
+  }
 
 
 
