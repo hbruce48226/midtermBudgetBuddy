@@ -3,7 +3,6 @@ let purchaseDescription = document.getElementById('purchase-information-descript
 let purchasePrice = document.getElementById('purchase-information-price'); //input box to give price of purchase
 
 
-
 // adds things to the ledger
 class Ledger {
     constructor(ledgerItem) {
@@ -24,27 +23,45 @@ class Ledger {
             // const rowItemDescription = document.getElementById('')
 
             row.innerHTML = `
+            <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.date}</td>
             <td>${item.price}</td>
             `
-            ledger_table.appendChild(row); //append that to contact list ... always use appendChild() instead of append()
+
+            const ledger_table_entertainment = document.getElementById('ledger-table-entertainment');
+            const ledger_table_food = document.getElementById('ledger-table-food');
+            const ledger_table_clothing = document.getElementById('ledger-table-clothing');
+            const ledger_table_bills = document.getElementById('ledger-table-bills');
+
+
+            if (purchaseType.value === 'Entertainment') {
+                ledger_table_entertainment.appendChild(row);
+            } else if (purchaseType.value === 'Food') {
+                ledger_table_food.appendChild(row);
+            } else if (purchaseType.value === 'Clothing') {
+                ledger_table_clothing.appendChild(row);
+            } else if (purchaseType.value === 'Bills') {
+                ledger_table_bills.appendChild(row);
+            }
+
 
         }
     }
 
-    add(item) {
-        this.ledgerItem.push(item);
-    }
+    // add(item) {
+    //     this.ledgerItem.push(item);
+    // }
 
-    deleteAt(index) {
-        this.ledgerItem.splice(index, 1);
-    }
+    // deleteAt(index) {
+    //     this.ledgerItem.splice(index, 1);
+    // }
 }
 
 
 class LedgerItem {
-    constructor(description, date, price) {
+    constructor(category, description, date, price) {
+        this.category = category;
         this.description = description;
         this.date = date;
         this.price = price;
@@ -52,22 +69,14 @@ class LedgerItem {
 }
 
 // finds the table element with id 'ledger-table' and assigns it to variable 'ledger_table'
-const ledger_table = document.getElementById('ledger-table');
+// const ledger_table = document.getElementById('ledger-table');
 
 //this is how we create (initialize) our new ledger
-const ledger = new Ledger([
-    new LedgerItem('Jeans by Lucky', '03.18.2019', '$100'), 
-    new LedgerItem('T-shirt by Rag & Bone', '03.18.2019', '$60')
-]);
-ledger.display(); //so the ledger actually shows up
-
-
-
-
-
-
-
-
+// const ledger = new Ledger([
+//     new LedgerItem('Clothing', 'Jeans by Lucky', '03.18.2019', '$100'), 
+//     new LedgerItem('Clothing', 'T-shirt by Rag & Bone', '03.18.2019', '$60')
+// ]);
+// ledger.display(); //so the ledger actually shows up
 
 
 
@@ -89,9 +98,9 @@ addYourBudget.addEventListener('click', () => {
     balance.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}`; //this will be initialized to whatever the budget is
 
     console.log(`look at me bitch, the amountSpent is: ${amountSpent.innerHTML}`);
-    console.log(`Budget is ${typeof(userBudget)}`);
-    console.log(`Amount Spent is ${typeof(amountSpent)}`);
-    console.log(`Balance is ${typeof(balance)}`);
+    console.log(`Budget is ${typeof (userBudget)}`);
+    console.log(`Amount Spent is ${typeof (amountSpent)}`);
+    console.log(`Balance is ${typeof (balance)}`);
 
 });
 console.log(`look at me bitch, the amountSpent is: ${amountSpent.innerHTML}`);
@@ -125,7 +134,7 @@ addButton.addEventListener('click', () => {
     // document.getElementById('balance').innerHTML = `your balance: ${balance}`; //displays the change in budget
 
 
-    let newLedgerRow = new Ledger([new LedgerItem(`${purchaseDescription.value}`,`03.20.2019`, `$${purchasePrice.value}`)]);
+    let newLedgerRow = new Ledger([new LedgerItem(`${purchaseType.value}`, `${purchaseDescription.value}`, `03.20.2019`, `$${purchasePrice.value}`)]);
     newLedgerRow.display();
 });
 
@@ -143,7 +152,6 @@ addButton.addEventListener('click', () => {
 
 
 
-//NEED TO MAKE A DATE FUNCTION THAT RETURNS CURRENT DATE IN MM-DD-YYYY FORMAT
 
 
 
@@ -152,7 +160,13 @@ addButton.addEventListener('click', () => {
 const purchaseUpdater = (itemPrice) => { //function takes in price of item and changes the budget to reflect purchase
     amountSpent.innerHTML = parseInt(amountSpent.innerHTML) + parseInt(itemPrice); //updates amountSpent
     balance.innerHTML -= itemPrice; //updates budget 
+
+    
 };
+
+
+
+
 
 
 

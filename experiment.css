@@ -1,48 +1,172 @@
+/* *{
+    border: 1px solid blue;
+} */
+
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    /* background-image: url(https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__340.jpg); */
+    background-color: lightblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 480px) {
+
+.logo {
+  position: relative;
+  color: limegreen;
+  margin: .625em 0 .5em .5em;
+}
+   
+.logo-green {
+  color: limegreen;
+}
+
+.add-border {
+    background-color: whitesmoke;
+    border:none;
+    height: 20px;
+    width: 100%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    margin: -50px auto 10px; 
 }
 
 #header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #1f1209;
+  box-shadow: 0 20px 20px -20px #333;
+  background-color: navy;
+} 
+
+h2 {
+    width: 5em;
+    color: white;
+    margin-left: .5em;
+}
+
+.budget-icon,
+.expense-icon,
+.balance-icon {
     display: flex;
-    width: 60%;
-    justify-content: space-between;
+    width: 2em;
+    justify-content: space-around;
+    font-size: 35px;
+    color: black;
+    text-align:center;
+    margin-bottom: .375em;
 }
 
-h1 {
-    flex-direction: row;
+.budget-icon {
+    color:green;
 }
 
-#header-container p {
+.expense-icon {
+    color: red;
+}
+
+#header-userBudget, #header-amountSpent, #header-balance {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: flex-end; 
+ }
+
+#balance, #amountSpent, #userBudget {
+    width: 3em;
+    color: white;
+    font-size: 1.5em;
+}
+
+#input-submit-budget {
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
+    flex-direction: column;
+    align-content: center;
+    margin: .250em 0 .250em;
+    padding: .375em .250em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: whitesmoke;
 }
 
-
+#what-is-your-budget,
+#purchase-information-description, 
+#purchase-information-price,
+#purchase-information-dropdown {
+    width: 98.5%;
+    justify-content: space-around;
+}
 
 #information-about-the-purchase {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: baseline;
-    width: 90%;
+    padding: 0 .250em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: navy;
 }
 
-input, select {
+#information-about-the-purchase p {
+    color: silver;
+    margin: 7px 0;
+}
+
+#purchase-price, #purchase-type, #purchase-expense {
+    height: 4.250em;
     width: 100%;
 }
 
-table {
-    width: 80%;
-    padding: 50px;
+#purchase-information-description, 
+#purchase-information-price,
+#purchase-information-dropdown {
+    width: 99%;
+    justify-content: space-around;
+    font-size: .875em;
+    margin-bottom: .250em;
+    border: 0;
 }
 
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-spacing: 0px;
+    font-size: .938em; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;  
+    background:navy;
+    border-collapse: collapse;
+}
 
+td, th {
+    vertical-align: 0px;
+}
 
+th {
+    color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 25%;
+}
 
+table th {
+    text-align: left;
+}
 
+table td {
+    text-align: left;
+}
+
+tr td {
+    color: white;
+}
 
 .ledger-list {
     display: flex;
@@ -57,6 +181,507 @@ table {
 
 .ledger-list div p {
     padding: 5px;
-    margin-top: -15px;
-    
+    margin-top: -15px;    
 }
+
+button {
+    padding: 0;
+    font-size: .875em;
+    width: 99.5%;
+    margin: .125em 0 .125em;
+    font-weight:bold;
+    color:green;
+
+}
+
+#add-Button {
+    display: flex;
+    align-content: center;
+    margin: .250em 0 .250em;
+    padding: .375em .250em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: whitesmoke;
+}
+
+#addButton {
+    width: 99%;
+}
+
+tr:hover, td:hover {
+    background-color:darkgrey;
+}
+} 
+
+@media screen and (min-width: 426px) and (max-width: 768px) { 
+    /* STYLES HERE */
+
+#mainbudget-plusgraph {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#budget-graph, #budget-table {
+    /* width: 59.5%; */
+    height: 100%;
+}
+
+
+
+#header-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 37.506em; */
+    justify-content: space-around;
+    /* justify-content: left; */
+    border-radius: 2px;
+    margin-bottom: .250em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: navy;
+}
+
+#header-userBudget, #header-amountSpent, #header-balance {
+    width: 10em;
+    height: 8.839em;
+}
+
+#balance, #amountSpent, #userBudget {
+    width: 3em;
+    color: white;
+    font-size: 1.5em;
+    line-height: .5em;
+    margin: .7em 1.8em;
+}
+
+h1 {
+    font-weight: bold;
+    color:black;
+}
+
+h2 {
+    text-align: center;
+    margin: .625em 0;
+    font-weight: bold;
+    color:white;
+}
+
+#input-submit-budget {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* width: 37.506em; */
+    margin: .250em 0 .250em;
+    padding-top: .375em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: whitesmoke;
+}
+
+#what-is-your-budget,
+#submit-your-budget {
+    width: 12.500em;
+    margin-left: 2.5em;
+}
+
+#purchase-price, #purchase-type, #purchase-expense {
+    height: 6.250em;
+    width: 11.000em;
+}
+
+#information-about-the-purchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: navy;
+}
+
+#information-about-the-purchase p {
+    font-weight: 200;
+    font-size: 1.125em;
+    color: lightgray;
+    margin: 14px 0;
+}
+
+#logo-container{
+    width: 100%;
+  }
+
+.logo {
+    position: relative;
+    color: limegreen;
+    margin: .625em 0 .5em .5em;
+}
+
+.logo-green {
+    color:limegreen;
+}
+
+.add-border {
+    background-color: whitesmoke;
+    border:none;
+    height: 20px;
+    width: 100%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    margin: -50px auto 10px; 
+}
+
+#header-container p {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 1.250em; */
+}
+
+.budget-icon,
+.expense-icon,
+.balance-icon {
+    display: flex;
+    justify-content: space-around;
+    font-size: 35px;
+    color: black;
+    text-align:center;
+    margin-bottom: .375em;
+}
+
+.budget-icon {
+    color:green;
+}
+
+.expense-icon {
+    color: red;
+}
+
+input, select {
+    width: 98%;
+    margin-bottom: .250em;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-spacing: 0px;
+    font-size: .938em; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;  
+    background:navy;
+    border-collapse: collapse;
+}
+
+td, th {
+    vertical-align: 0px;
+}
+
+th {
+    color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 25%;
+}
+
+tr td {
+    color: white;
+}
+
+table th {
+    text-align: left;
+}
+
+table td {
+    text-align: left;
+}
+
+.ledger-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ledger-list div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ledger-list div p {
+    padding: 5px;
+    margin-top: -15px;    
+}
+
+button {
+    padding: 0;
+    /* border-radius: .125em; */
+    font-size: .875em;
+    width: 99%;
+    margin: .125em 0 .500em;
+    font-weight:bold;
+    color:green;
+
+}
+
+#add-Button {
+    display: flex;
+    justify-content: flex-end;
+    margin: .250em 0 .250em;
+    padding-top: .375em;
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+    background-color: whitesmoke;
+}
+
+#addButton {
+    width: 12.500em;
+    margin-right: 2.8em;
+}
+
+input {
+    font-size: .875em;
+    width: 99%;
+    border: 1px solid black;
+}
+
+tr:hover, td:hover {
+    background-color:darkgrey;
+}
+}
+
+@media screen and (min-width: 769px) {
+    .logo {
+        position: relative;
+        color: limegreen;
+        z-index: 1;
+        margin: .625em 0 .5em .5em;
+    }
+    
+    .logo-green {
+        position: relative;
+        z-index: 1;
+        color:limegreen;
+    }
+    
+    #mainbudget-plusgraph {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #budget-graph {
+        /* display: flex;
+        align-content: center; */
+        width: 59.5%;
+        height: 100%;
+    }
+    
+    #header-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* width: 37.506em; */
+        justify-content: space-around;
+        border-radius: 2px;
+        margin-bottom: .250em;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        /* background-color: rgba(232, 232, 238, 0.89); */
+        background-color: navy;
+    }
+    
+    #header-userBudget, #header-amountSpent, #header-balance {
+        width: 10em;
+        height: 8.839em;
+    }
+    
+    #balance, #amountSpent, #userBudget {
+        width: 3em;
+        color: white;
+        font-size: 1.5em;
+        margin: .5em;
+    }
+    
+    h2 {
+        text-align: center;
+        margin: .625em 0;
+        font-weight: bold;
+        color:white;
+        /* padding: 1em; */
+    }
+    
+    #input-submit-budget {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        /* width: 37.506em; */
+        margin: .250em 0 .250em;
+        padding-top: .375em;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        background-color: whitesmoke;
+    }
+    
+    #what-is-your-budget,
+    #submit-your-budget {
+        width: 12.500em;
+        margin-left: 5.5em;
+    }
+    
+    #purchase-price, #purchase-type, #purchase-expense {
+        height: 6.250em;
+        width: 11.000em;
+    }
+    #information-about-the-purchase p {
+        font-weight: 200;
+        font-size: 1.125em;
+        color: white;
+        margin: 14px 0;
+    }
+    
+    #logo-container{
+        width: 100%;
+      }
+    
+    .add-border {
+        background-color: whitesmoke;
+        border:none;
+        height: 20px;
+        width: 100%;
+        height: 50px;
+        margin-top: 0;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        margin: -50px auto 10px; 
+    }
+    
+    #header-container p {
+        display: flex;
+        justify-content: center;
+        margin-left: 1.8em;
+    }
+        
+    .budget-icon,
+    .expense-icon,
+    .balance-icon {
+        display: flex;
+        justify-content: space-around;
+        font-size: 35px;
+        color: white;
+        text-align:center;
+        margin-bottom: .375em;
+    }
+    
+    .budget-icon {
+        color:green;
+    }
+    
+    .expense-icon {
+        color: red;
+    }
+    
+    #information-about-the-purchase {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        /* width: 37.506em; */
+        background-color: navy;
+    }
+    
+    input, select {
+        width: 98%;
+        margin-bottom: .250em;
+    }
+    
+    table {
+        width: 100%;
+        border: 1px solid black;
+        border-spacing: 0px;
+        font-size: .938em; 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 2px;  
+        background:navy;
+        border-collapse: collapse;
+    }
+    
+    td, th {
+        vertical-align: 0px;
+    }
+    
+    th {
+        color: white;
+        margin-top: 0px;
+        padding-top: 0px;
+        width: 25%;
+    }
+    
+    table th {
+        text-align: left;
+    }
+    
+    table td {
+        text-align: left;
+    }
+    
+    tr td {
+        background-color: lightgray; 
+        color: white;
+    }
+
+    .ledger-list {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .ledger-list div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .ledger-list div p {
+        padding: 5px;
+        margin-top: -15px;    
+    }
+    
+    button {
+        padding: 0;
+        /* border-radius: .125em; */
+        font-size: .875em;
+        width: 100%;
+        margin: .125em 0 .500em;
+        font-weight:bold;
+        color:green;    
+    }
+    
+    #add-Button {
+        display: flex;
+        justify-content: flex-end;
+        /* width: 37.506em; */
+        margin: .250em 0 .250em;
+        padding-top: .375em;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        background-color: whitesmoke;
+    }
+    
+    #addButton {
+        width: 12.500em;
+        margin-right: 5.8em;
+    }
+    
+    input {
+        font-size: .875em;
+        width: 99%;
+        border: 1px solid grey;
+    }
+    
+    tr:hover, td:hover {
+        background-color:darkgrey;
+    }
+    }
