@@ -6,116 +6,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="experiment.css">
+    <title>Experiment</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <title>Document</title>
-    <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
+    <section class="logo-section">
+        <h3 class="logo">Budget<span class="logo-green">Buddy</span></h3>
+       </section>
+    <section class='inputFormat'>
 
-<section id="logo-container">
-  <h1 class="logo">Budget<span class="logo-green">Buddy</span></h3>   
+        <section id='blackboxHeader'>
+            <!-- header -->
+            <section id='header-container'>
+                <div class='header-container-col'>
+                    <h1>Budget</h1>
+                    <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
+                    <p id='userBudget'></p>
+                </div>
+
+                <div class='header-container-col'>
+                    <h1>Spent</h1>
+                    <span class="expense-icon"><i class="far fa-credit-card"></i></span>
+                    <p id='amountSpent'></p>
+                </div>
+
+                <div class='header-container-col'>
+                    <h1>Balance</h1>
+                    <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
+                    <p id='balance'></p>
+                </div>
+
+            </section>
+        </section>
+
+
+        <!-- budget input -->
+        <section id='budget-input-section'>
+            <input id='what-is-your-budget' placeholder="Input your budget">
+            <button id='submit-your-budget'>Submit</button>
+        </section>
+
+
+
+
+        <!-- main section -->
+        <section id='information-about-the-purchase'>
+            <div class='paragraphAndInput'>
+                <!-- <p>Input your expense...</p> -->
+                <input id='purchase-information-description' placeholder="Input your type of expense ...">
+            </div>
+            <div class='paragraphAndInput'>
+                <!-- <p>Input the date...</p> -->
+                <input id='purchase-information-date' placeholder="Input the date ...">
+            </div>
+            <div class='paragraphAndInput'>
+                <!-- <p>Input the price...</p> -->
+                <input id='purchase-information-price' placeholder="Input the price ...">
+            </div>
+            <div class='paragraphAndInput'>
+                <!-- <p>Select the type...</p> -->
+                <select name="type" id='purchase-type-dropdown'>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Food">Food</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Bills">Bills</option>
+                </select>
+            </div>
+            <div class='paragraphAndInput'>
+                <!-- <p>Submit</p> -->
+                <button id='addButton'>Submit</button>
+                <button id='resetButton' onclick="myFunction()">Clear</button>
+            </div>
+        </section>
     </section>
-    <div class="add-border"></div>
-<div id="mainbudget">
-    <section id="budget-main">
-      <section id='header-container'>
-       
-        <div id="header-userBudget">
-            <p id='userBudget'></p>
-            <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
-            <h2>Budget</h2>
-        </div>
 
-        <div id="header-amountSpent">
-            <p id='amountSpent'></p>
-            <span class="expense-icon"><i class="far fa-credit-card"></i></span>
-            <h2>Expenses</h2>            
-        </div>
 
-        <div id="header-balance">
-            <p id='balance'></p>            
-            <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
-            <h2>Balance</h2>
-        </div>
+
+    <section class='tableFormat'>
+        <!-- footer -->
+        <table id='ledger-table-entertainment'>
+            <tr>
+                <h3>Entertainment</h3>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
+            </tr>
+        </table>
+        <table id='ledger-table-food'>
+            <tr>
+                <h3>Food</h3>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
+            </tr>
+        </table>
+        <table id='ledger-table-clothing'>
+            <tr>
+                <h3>Clothing</h3>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
+            </tr>
+        </table>
+        <table id='ledger-table-bills'>
+            <tr>
+                <h3>Bills</h3>
+                <th class='ledger-col-description'>Description</th>
+                <th class='ledger-col-date'>Date</th>
+                <th class='ledger-col-price'>Price</th>
+            </tr>
+        </table>
 
     </section>
 
-    <section id="input-submit-budget">
-        <input id='what-is-your-budget' placeholder=" what is your budget?">
-        <button id='submit-your-budget'>submit</button>
+
+    <section id='piechartSection'>
+            <div id="piechart" style="width: 100%;"></div>
+        <button id='spendBreakdownButton'>
+            <h4>Display your monthly spend breakdown: </h4>
+        </button>
     </section>
 
-    <section id='information-about-the-purchase'>
-        <div id="purchase-type">
-            <p>What type of purchase is it?</p>
-            <select name="type" id='purchase-type-dropdown'>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Food">Food</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Bills">Bills</option>
-            </select>
-        </div>
-        <div id="purchase-expense">
-            <p>What is the name of your expense?</p>
-            <input id='purchase-information-description' placeholder=" clothing, food, etc.">
-        </div>
-        <div id="purchase-price">
-            <p>What is the price of your expense?</p>
-            <input id='purchase-information-price' placeholder=" enter price">
-        </div>
-       
-    </section>
-    <div id="add-Button">
-        <!-- <p>Submit</p> -->
-        <button id='addButton'>Submit</button>
-        <!-- <input type="button" onclick="myFunction();" value=""> -->
-    </div>
-    <!-- if input is x, put that into ledger x -->
-    <!-- if input is y, put that into ledger y -->
-</section>
-<section id="budget-table">
 
-    <table id='ledger-table-entertainment'>
-        <tr>
-            <th>Entertainment</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Price</th>
-        </tr>
-    </table>
-    <table id='ledger-table-food'>
-        <tr>
-            <th>Food</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Price</th>
-        </tr>
-    </table>
-    <table id='ledger-table-clothing'>
-        <tr>
-            <th>Clothing</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Price</th>
-        </tr>
-    </table>
-    <table id='ledger-table-bills'>
-        <tr>
-            <th>Bills</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Price</th>
-        </tr>
-    </table>
-    
-</section>
-    <!-- <section class='ledger-list'></section> -->
-        <!-- <div id="chartContainer" style="height: 350px; width: 75%;"></div> -->
-
-</div>
+    <!-- javascript -->
     <script src='experiment.js'></script>
+
 
 </body>
 
