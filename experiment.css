@@ -395,7 +395,7 @@ h1 {
     
     #what-is-your-budget,
     #submit-your-budget {
-        width: 12.500em;
+        width: 100%;
     }
     
     #purchase-price, #purchase-type, #purchase-expense {
