@@ -144,6 +144,7 @@ addButton.addEventListener('click', () => {
         // document.getElementById('budget-input-section').style.marginTop = '0px';
     };
 
+    purchaseDate.value = '';
     purchaseDescription.value = ''; //clears the value after Submit
     purchasePrice.value = ''; //clears the value after Submit
 
@@ -178,7 +179,7 @@ spendBreakdownButton.addEventListener('click', () => {
 
         const options = {
             title: 'Monthly Spend Breakdown',
-            backgroundColor: 'red'
+            backgroundColor: 'white'
         };
 
         let chart = new google.visualization.PieChart(document.getElementById('piechart'));

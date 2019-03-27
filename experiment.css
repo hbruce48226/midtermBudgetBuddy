@@ -81,16 +81,12 @@ body {
     /* centers the header above the box */
 }
 
-/* the h1 component of the class containing the header Budget Spent Balance section */
-/* .header-container-col h1 {
-    margin-bottom: -25px;
-    /* makes numbers closer to headers words */
-/* } */
-
 /* the input budget section under the Budget Spent Balance header section*/
 #budget-input-section {
     padding-bottom: 10px;
-    margin-top: -20px;
+    margin-top: 0px;
+    width:50%;
+    height:100px;
     display: flex;
     flex-direction: column;
     text-align-last: center;
@@ -98,9 +94,8 @@ body {
 
 /* the 'Input your budget' box */
 #what-is-your-budget {
-    height: 20px;
+    height: 50px;
     padding: 2px 2px 0px 2px;
-    margin-bottom: 2px;
     opacity: .8;
     border: 0;
     border: 1px solid black;
@@ -112,7 +107,10 @@ body {
 #what-is-your-budget::placeholder {
     color: black;
     font-family: monospace;
-    font-size: 1.1em;
+    font-size: 120%;
+    width: 100%;
+    height: 80px;
+    background-color: hsl(26, 70%, 46%);
 }
 
 /* the submit button for the 'Input your budget' box */
@@ -188,7 +186,7 @@ body {
 }
 
 /* the submit button under the input boxes / select dropdown in this section */
-#addButton,#resetButton {
+#addButton,#resetButton,#submit-your-budget {
     width: 100%;
     /* makes button span entire width of container */
     justify-content: center;
@@ -196,6 +194,7 @@ body {
     height: 50px;
     font-size: 1em;
     font-weight:bold;
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
@@ -222,7 +221,7 @@ h3 {
     margin-bottom: 0px;
     font-family: monospace;
     font-size: 1.5em;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 /* the ledger section */
@@ -283,6 +282,7 @@ table td {
     background-image: linear-gradient(hsl(26, 70%, 60%), hsl(26, 70%, 46%));
     margin-bottom: 20px;
     font-weight:bold;
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -302,77 +302,151 @@ table td {
 .balance-icon{
     color: black;
     font-size: 50px;
+    cursor: pointer;
 }
-.budget-icon:hover,
-.expense-icon:hover,
-.balance-icon:hover {
-  font-size:60px;
-}
+
 .budget-icon {
   color:green;
   font-size: 50px;
+  cursor: pointer;
 }
 .expense-icon {
     color: red;
     font-size: 50px;
+    cursor: pointer;
 }
 
+.budget-icon:hover,
+.expense-icon:hover,
+.balance-icon:hover {
+    transition: 2s ease-out;
+    transition: 2s ease-out;
+    transition: 2s ease-out;
+    transition: 2s ease-out;
+}
+.logo-section{
+    font-size:25px;
+    text-shadow: 0 1px 0 rgb(68, 63, 63),
+               0 2px 0 rgb(68, 63, 63),
+               0 3px 0 rgb(68, 63, 63),
+               0 4px 0 rgb(68, 63, 63),
+               0 5px 0 rgb(68, 63, 63),
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
 .logo-green {
     color:green;
 }
+h1 {
+    font-size:20px;
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
 
-@media screen and (min-width: 768px){
 body {
+
     display:flex;
-    flex-direction: row;  
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-items:stretch;
+        
 }
-
-.inputFormat {
-   width: 35%;
-}
-
-#what-is-your-budget {
-    text-align:center;
-    padding-left: 10px;
-    height:40px;
-}
-.tableFormat {
-    width: 52%;
-    margin-left:6%;
-}
-
-.logo-section {
-    display: flex;
-    justify-content: flex-start;
-    margin-right: 90%;
-    margin-bottom:20px;
+h1 {
+    font-size:20px;
 }
     
-.logo-green {
-    color: green;
+h3 {
+    margin-bottom:30px;
 }
-table {
+th {
     height:30px;
 }
 
+.logo-section {
+    font-size:30px;
+}
+#submit-your-budget {
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: .8em;
+    margin-bottom: 10px;
+    height: 35px;
+    font-family: monospace;
+    font-size: 1.1em;
+    padding-top: 2px;
+    background: hsl(26, 70%, 56%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+#what-is-your-budget {
+    height: 50px;
+    padding: 2px 2px 0px 2px;
+    opacity: .8;
+    border: 0;
+    border: 1px solid black;
+    background-color: hsl(26, 70%, 56%);
+    box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+}
+
+@media screen and (min-width: 768px){
+
+body {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height:auto;
+}
+body>* {
+    flex: 1 1 auto;
+}
+h3 {
+    margin-bottom: 30px;
+}
+h1 {
+    font-size:20px;
+}
+.header-line {
+    font-size: 20px;
+}
+
+.inputFormat {
+    width:40%;
+    margin-right:40px;
+}
+
+.logo-section {
+    width:100%;
+    font-size:25px;
+}
 #piechartSection {
-    display: flex;
-    flex-direction: column;
-    margin-left:50%;
-    /* flex-wrap: wrap; */
+    flex-grow:0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width:20%;
 }
 
 #piechart {
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    margin-top: 10px;
-    background: transparent;
-}
-.header-container-col {
-    font-weight: bold;
-    font-size:30px;
+    align-content: center;
+    width:30%;
 }
 
+.tableFormat {
+    width:40%;
+    height: 570px;
+}
+table {
+    height: 50px;
+}
+.logo {
+    text-align:center;
+    margin-bottom: 50px;
+}
 }
