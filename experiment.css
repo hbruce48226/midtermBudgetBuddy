@@ -346,53 +346,221 @@ h1 {
     font-size:20px;
 }
 @media screen and (min-width: 426px) and (max-width: 768px) {
-
-body {
-
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:center;
-    align-items:stretch;
-        
-}
-h1 {
-    font-size:20px;
-}
+    #blackboxHeader {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     
-h3 {
-    margin-bottom:30px;
-}
-th {
-    height:30px;
-}
-
-.logo-section {
-    font-size:30px;
-}
-#submit-your-budget {
-    border: 1px solid black;
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: .8em;
-    margin-bottom: 10px;
-    height: 35px;
-    font-family: monospace;
-    font-size: 1.1em;
-    padding-top: 2px;
-    background: hsl(26, 70%, 56%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#what-is-your-budget {
-    height: 50px;
-    padding: 2px 2px 0px 2px;
-    opacity: .8;
-    border: 0;
-    border: 1px solid black;
-    background-color: hsl(26, 70%, 56%);
-    box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    .tableFormat {
+        height: 100%;
+    }
+    
+    
+    
+    #header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 2px;
+        margin-bottom: .250em;
+    }
+    
+    .header-container-col{
+        width: 10em;
+    }
+    
+    #balance, #amountSpent, #userBudget {
+        width: 3em;
+        font-size: 1.5em;
+    }
+    
+    h1 {
+        font-weight: bold;
+        color:black;
+    }
+    
+    h2 {
+        text-align: center;
+        margin: .625em 0;
+        font-weight: bold;
+        /* color:white; */
+    }
+    
+    #budget-input-section {
+        display: flex;
+        flex-direction: column;
+        padding-top: .375em;
+    }
+    
+    #what-is-your-budget,
+    #submit-your-budget {
+        width: 12.500em;
+    }
+    
+    #purchase-price, #purchase-type, #purchase-expense {
+        height: 6.250em;
+        width: 11.000em;
+    }
+    
+    #information-about-the-purchase {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: baseline;
+        background-color:linear-gradient(hsl(26, 70%, 60%), hsl(26, 70%, 46%));
+    }
+    
+    #information-about-the-purchase p {
+        font-weight: 200;
+        font-size: 1.125em;
+        color: lightgray;
+        margin: 14px 0;
+    }
+    
+    #logo-container{
+        width: 100%;
+      }
+    
+    h3 {
+        position: relative;
+        margin: .625em 0 .5em .5em;
+    }
+    
+    .logo-green {
+        color:limegreen;
+    }
+    
+    .add-border {
+        background-color: whitesmoke;
+        border:none;
+        height: 20px;
+        width: 100%;
+        height: 50px;
+        margin-top: 0;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        margin: -50px auto 10px; 
+    }
+    
+    #header-container p {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .budget-icon,
+    .expense-icon,
+    .balance-icon {
+        display: flex;
+        justify-content: space-around;
+        font-size: 35px;
+        color: black;
+        text-align:center;
+        margin-bottom: .375em;
+    }
+    
+    .budget-icon {
+        color:green;
+    }
+    
+    .expense-icon {
+        color: red;
+    }
+    
+    input, select {
+        width: 98%;
+        margin-bottom: .250em;
+    }
+    .tableFormat, .inputFormat {
+        width: 96%;
+    }
+    
+    .tableFormat {
+        padding: 0 0 20px 0;
+    }
+    table {
+        width: 96%;
+        border: 1px solid black;
+        border-spacing: 0px;
+        font-size: .938em; 
+        border-radius: 2px;  
+        border-collapse: collapse;
+    }
+    
+    td, th {
+        vertical-align: 0px;
+    }
+    
+    th {
+        margin-top: 0px;
+        padding-top: 0px;
+        width: 25%;
+    }
+    
+    tr td {
+        color: black;
+    }
+    
+    table th {
+        text-align: left;
+    }
+    
+    table td {
+        text-align: left;
+    }
+    
+    .ledger-list {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .ledger-list div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .ledger-list div p {
+        padding: 5px;
+        margin-top: -15px;    
+    }
+    
+    button {
+        padding: 0;
+        font-size: .875em;
+        width: 99%;
+        margin: .125em 0 .500em;
+        font-weight:bold;
+        color:green;
+    
+    }
+    
+    #add-Button {
+        display: flex;
+        justify-content: flex-end;
+        margin: .250em 0 .250em;
+        padding-top: .375em;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 20px 20px -20px #333;
+        background-color: whitesmoke;
+    }
+    
+    #addButton {
+        width: 12.500em;
+        margin-right: 2.8em;
+    }
+    
+    input {
+        font-size: .875em;
+        width: 99%;
+        border: 1px solid black;
+    }
+    
+    tr:hover, td:hover {
+        background-color:darkgrey;
+     }
+    
 }
 
 @media screen and (min-width: 768px){
