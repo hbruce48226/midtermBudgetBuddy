@@ -85,7 +85,6 @@ body {
 #budget-input-section {
     padding-bottom: 10px;
     margin-top: 0px;
-    width:50%;
     height:100px;
     display: flex;
     flex-direction: column;
