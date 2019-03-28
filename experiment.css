@@ -546,10 +546,7 @@ h1 {
         box-shadow: 0 20px 20px -20px #333;
         background-color: whitesmoke;
     }
-    #addButton {
-        width: 12.500em;
-        margin-right: 2.8em;
-    }
+    
     input {
         font-size: .875em;
         width: 99%;
