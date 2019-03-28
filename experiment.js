@@ -195,6 +195,8 @@ spendBreakdownButton.addEventListener('click', () => {
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
 
+    toggleDisplay();
+    
     function drawChart() {
 
         let data = google.visualization.arrayToDataTable([
