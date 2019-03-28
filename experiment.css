@@ -69,7 +69,7 @@ body {
     border: 1px solid black;
     height: 35px;
     width: 100%;
-    font-size: 2em;
+    font-size: 130%;
     font-size-adjust: inherit;
     /* makes boxes adjustable depending on size of number given */
 }
