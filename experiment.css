@@ -237,6 +237,7 @@ h3 {
     font-family: monospace;
     font-size: 1.5em;
     margin-bottom: 10px;
+    text-align:center;
 }
 
 /* the ledger section */
@@ -354,6 +355,7 @@ table td {
     position: sticky;
     top: 0;
     font-size: 25px;
+    width:100%;
     text-shadow: 0 1px 0 rgb(68, 63, 63), 0 2px 0 rgb(68, 63, 63), 0 3px 0 rgb(68, 63, 63), 0 4px 0 rgb(68, 63, 63), 0 5px 0 rgb(68, 63, 63), 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
 }
 
@@ -372,6 +374,17 @@ h1 {
         display: flex;
         flex-direction: column;
     }
+    .logo-section {
+    /* border: 5px solid black; */
+    background-color: rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    font-size: 25px;
+    width:100%;
+    text-shadow: 0 1px 0 rgb(68, 63, 63), 0 2px 0 rgb(68, 63, 63), 0 3px 0 rgb(68, 63, 63), 0 4px 0 rgb(68, 63, 63), 0 5px 0 rgb(68, 63, 63), 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
     .tableFormat {
         height: 100%;
     }
@@ -430,6 +443,7 @@ h1 {
     h3 {
         position: relative;
         margin: .625em 0 .5em .5em;
+        text-align:center;
     }
     .logo-green {
         color: limegreen;
