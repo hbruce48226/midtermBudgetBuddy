@@ -123,7 +123,7 @@ addButton.addEventListener('click', () => {
     //alerts user if budget is spent
     if (parseInt(balance.innerHTML) - purchasePrice.value >= 0) {
         //update overview header section
-        let price = parseInt(purchasePrice.value);
+        let price = parseFloat(purchasePrice.value).toFixed(2);
         purchaseUpdater(price);
 
         //update the ledger
@@ -153,7 +153,7 @@ addButton.addEventListener('click', () => {
 
 // purchaseUpdater() function is called when addButton is clicked
 const purchaseUpdater = (itemPrice) => { //function takes in price of item and changes the budget to reflect purchase
-    amountSpent.innerHTML = parseInt(amountSpent.innerHTML) + parseInt(itemPrice); //updates amountSpent
+    amountSpent.innerHTML = parseFloat(amountSpent.innerHTML) + parseFloat(itemPrice).toFixed(2); //updates amountSpent
     balance.innerHTML -= itemPrice; //updates budget 
 };
 
