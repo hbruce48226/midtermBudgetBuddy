@@ -38,16 +38,16 @@ class Ledger {
 
             if (purchaseType.value === 'Entertainment') {
                 ledger_table_entertainment.appendChild(row);
-                entertainmentSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
+                entertainmentSpentCounter += parseInt(purchasePrice.value);
             } else if (purchaseType.value === 'Food') {
                 ledger_table_food.appendChild(row);
-                foodSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
+                foodSpentCounter += parseInt(purchasePrice.value);
             } else if (purchaseType.value === 'Clothing') {
                 ledger_table_clothing.appendChild(row);
-                clothingSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
+                clothingSpentCounter += purchasePrice.value;
             } else if (purchaseType.value === 'Bills') {
                 ledger_table_bills.appendChild(row);
-                billsSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
+                billsSpentCounter += purchasePrice.value;
             }
         }
     }
