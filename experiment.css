@@ -588,6 +588,7 @@ h1 {
     .inputFormat {
         width: 40%;
         margin-right: 40px;
+        margin-left: 25px;
     }
     .logo-section {
         width: 100%;
@@ -607,6 +608,7 @@ h1 {
         width: 40%;
         padding: 0;
         height: 570px;
+        margin-right: 25px;
     }
     table {
         height: 50px;
