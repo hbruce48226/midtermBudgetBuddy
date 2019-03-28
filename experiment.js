@@ -215,7 +215,7 @@ spendBreakdownButton.addEventListener('click', () => {
 
         chart.draw(data, options);
     };
-
+toggleDisplay();
 });
 
 function myFunction() {
