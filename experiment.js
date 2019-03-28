@@ -195,7 +195,6 @@ spendBreakdownButton.addEventListener('click', () => {
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
 
-    toggleDisplay();
     
     function drawChart() {
 
@@ -206,7 +205,7 @@ spendBreakdownButton.addEventListener('click', () => {
             ['Clothing', clothingSpentCounter],
             ['Bills', billsSpentCounter]
         ]);
-
+     toggleDisplay();
         const options = {
             title: 'Monthly Spend Breakdown',
             backgroundColor: 'white'
