@@ -600,6 +600,7 @@ h1 {
     }
     .tableFormat {
         width: 40%;
+        padding: 20px 8px 0;
         height: 570px;
     }
     table {
