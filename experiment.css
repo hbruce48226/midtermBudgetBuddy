@@ -528,10 +528,9 @@ h1 {
     button {
         padding: 0;
         font-size: .875em;
-        width: 99%;
+        width: 100%;
         margin: .125em 0 .500em;
         font-weight: bold;
-        color: green;
     }
     #add-Button {
         display: flex;
