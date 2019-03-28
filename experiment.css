@@ -98,6 +98,7 @@ body {
 /* the 'Input your budget' box */
 
 #what-is-your-budget {
+    width: 17em;
     height: 50px;
     padding: 2px 2px 0px 2px;
     opacity: .8;
@@ -348,7 +349,7 @@ table td {
 
 .logo-section {
     /* border: 5px solid black; */
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .6);
     border-radius: 10px;
     position: sticky;
     top: 0;
@@ -404,7 +405,7 @@ h1 {
         padding-top: .375em;
     }
     #what-is-your-budget, #submit-your-budget {
-        width: 100%;
+        width: 300px;
     }
     #purchase-price, #purchase-type, #purchase-expense {
         height: 6.250em;
