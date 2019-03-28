@@ -3,7 +3,6 @@ let purchaseDescription = document.getElementById('purchase-information-descript
 let purchaseDate = document.getElementById('purchase-information-date'); //input box to give date of purchase....automatically pulls today's date if left blank 
 let purchasePrice = document.getElementById('purchase-information-price'); //input box to give price of purchase
 
-
 let entertainmentSpentCounter = 0;
 let foodSpentCounter = 0;
 let clothingSpentCounter = 0;
@@ -39,16 +38,16 @@ class Ledger {
 
             if (purchaseType.value === 'Entertainment') {
                 ledger_table_entertainment.appendChild(row);
-                entertainmentSpentCounter += parseInt(purchasePrice.value);
+                entertainmentSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
             } else if (purchaseType.value === 'Food') {
                 ledger_table_food.appendChild(row);
-                foodSpentCounter += parseInt(purchasePrice.value);
+                foodSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
             } else if (purchaseType.value === 'Clothing') {
                 ledger_table_clothing.appendChild(row);
-                clothingSpentCounter += parseInt(purchasePrice.value);
+                clothingSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
             } else if (purchaseType.value === 'Bills') {
                 ledger_table_bills.appendChild(row);
-                billsSpentCounter += parseInt(purchasePrice.value);
+                billsSpentCounter += parseFloat(purchasePrice.value).toFixed(2);
             }
         }
     }
@@ -73,14 +72,23 @@ let userBudget = document.getElementById('userBudget'); //finds the main paragra
 let amountSpent = document.getElementById('amountSpent'); //initializes amount spent with $0
 let balance = document.getElementById('balance'); //set to 0 now but will be initialized to whatever the userBudget is 
 
+const budgetInput = document.getElementById('what-is-your-budget');
 const addYourBudget = document.getElementById('submit-your-budget'); //finds the button with id 'submit-your-budget' and assigns to variable 'addYourBudget'
 // initializes the main header section
 // when user inputs their budget, the main header gets populated with the initialized information
 addYourBudget.addEventListener('click', () => {
-    userBudget.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}`; //looks for value user gives, represents their budget
-    amountSpent.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}` * 0; //this will be initialized with 0, no purchases made yet
-    balance.innerHTML = `${parseInt(document.getElementById('what-is-your-budget').value)}`; //this will be initialized to whatever the budget is
+    if (budgetInput.value === '') {
+        userBudget.innerHTML = 0; //looks for value user gives, represents their budget
+        amountSpent.innerHTML = 0; //this will be initialized with 0, no purchases made yet
+        balance.innerHTML = 0; //this will be initialized to whatever the budget is
+
+    } else {
+        userBudget.innerHTML = `${parseFloat(budgetInput.value).toFixed(2)}`; //looks for value user gives, represents their budget
+        amountSpent.innerHTML = `${parseFloat(budgetInput.value).toFixed(2)}` * 0; //this will be initialized with 0, no purchases made yet
+        balance.innerHTML = `${parseFloat(budgetInput.value).toFixed(2)}`; //this will be initialized to whatever the budget is
+    }
 });
+
 
 
 
@@ -121,9 +129,10 @@ addButton.addEventListener('click', () => {
 
 
     //alerts user if budget is spent
-    if (parseInt(balance.innerHTML) - purchasePrice.value >= 0) {
+    if (balance.innerHTML - purchasePrice.value >= 0) {
         //update overview header section
-        let price = parseFloat(purchasePrice.value).toFixed(2);
+        let price = parseFloat(purchasePrice.value);
+        console.log(price, typeof price);
         purchaseUpdater(price);
 
         //update the ledger
@@ -152,10 +161,29 @@ addButton.addEventListener('click', () => {
 
 
 // purchaseUpdater() function is called when addButton is clicked
-const purchaseUpdater = (itemPrice) => { //function takes in price of item and changes the budget to reflect purchase
-    amountSpent.innerHTML = parseFloat(amountSpent.innerHTML) + parseFloat(itemPrice).toFixed(2); //updates amountSpent
-    balance.innerHTML -= itemPrice; //updates budget 
+const purchaseUpdater = (itemPrice) => {
+    // console.log(itemPrice, amountSpent.innerHTML, amountSpent.textContent);
+    const resultAdd =  parseFloat(amountSpent.textContent) + parseFloat(itemPrice); //function takes in price of item and changes the budget to reflect purchase
+    // console.log(resultAdd);
+    amountSpent.innerHTML = resultAdd;//updates amountSpent
+    const resultSub = parseFloat(balance.innerHTML) - parseFloat(itemPrice);
+    balance.innerHTML = resultSub; //updates budget 
 };
+
+
+
+
+
+function toggleDisplay() {
+    const x = document.getElementById('piechart');
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
 
 
 
@@ -191,4 +219,4 @@ spendBreakdownButton.addEventListener('click', () => {
 
 function myFunction() {
     location.reload();
-  }
+}
